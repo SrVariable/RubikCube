@@ -14,7 +14,14 @@ void	rubik_cube(void)
 		destroy_cube(&cube);
 		return ;
 	}
-	display_canvas(canvas);
+	//display_canvas(canvas);
+	for (int i = 0; i < FACE; i++)
+	{
+		for (int j = 0; j < ROW; j++)
+		{
+			printf("%s\n", cube[i][j]);
+		}
+	}
 	destroy_canvas(&canvas);
 	destroy_cube(&cube);
 	return ;

@@ -52,7 +52,7 @@ UTILS_DIR = utils/
 
 # <-- Files --> #
 SRC_FILES = main.c
-UTILS_FILES = cube.c canvas.c
+UTILS_FILES = cube.c canvas.c movements.c
 
 # <-- Directories + Files --> #
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))

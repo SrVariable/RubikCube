@@ -29,4 +29,10 @@ char	**create_canvas(void);
 char	**destroy_canvas(char ***canvas);
 void	display_canvas(char **canvas);
 
+void	move_front(char ****cube);
+void	move_back(char ****cube);
+void	move_right(char ****cube);
+void	move_left(char ****cube);
+void	move_up(char ****cube);
+
 #endif
