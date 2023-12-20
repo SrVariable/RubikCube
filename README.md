@@ -38,8 +38,10 @@ Run the program
 ## To Do
 
 - Create cube ✅
+- Create canvas ✅
 - Check memory leaks ✅
-- Display the cube
+- Display canvas ✅
+- Display the cube in the canvas
 - Create movements
 - Handle user input
 - Automatic solver
