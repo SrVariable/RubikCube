@@ -41,14 +41,15 @@ Run the program
 - Create canvas ✅
 - Check memory leaks ✅
 - Display canvas ✅
+- Create movements ✅
+- Handle user input ✅
+- Fix movements
 - Display the cube in the canvas
-- Create movements
-- Handle user input
 - Automatic solver
 
 ## Emojis
 
-- White: ⬜
+- Purple: 🟪
 - Yellow: 🟨
 - Green: 🟩
 - Red: 🟥

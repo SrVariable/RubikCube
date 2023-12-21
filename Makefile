@@ -44,15 +44,17 @@ CC = gcc
 CFLAGS = 
 
 # <-- Remove Command -->#
-RM = rm -f
+RM = rm -rf
 
 # <-- Directories --> #
 SRC_DIR = src/
 UTILS_DIR = utils/
+OBJ_DIR = obj/
 
 # <-- Files --> #
 SRC_FILES = main.c
-UTILS_FILES = cube.c canvas.c movements.c
+UTILS_FILES = cube.c canvas.c movements.c \
+				input.c handler.c
 
 # <-- Directories + Files --> #
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -61,6 +63,7 @@ UTILS = $(addprefix $(UTILS_DIR), $(UTILS_FILES))
 # <-- Objects --> #
 OBJ_SRC = $(SRC:%.c=%.o)
 OBJ_UTILS = $(UTILS:%.c=%.o)
+OBJ = $(OBJ_SRC) $(OBJ_UTILS)
 
 # ========================================================================== #
 
@@ -68,10 +71,12 @@ OBJ_UTILS = $(UTILS:%.c=%.o)
 all: $(NAME)
 
 # <--Library Creation-->#
-$(NAME): $(OBJ_SRC) $(OBJ_UTILS)
+$(NAME): $(OBJ)
 	@echo "✅ 🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_GREEN)created successfully$(RESET)"
-	@gcc $(CFLAGS) $(OBJ_SRC) $(OBJ_UTILS) -o $(NAME)
+	@gcc $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "✅ 🦔 $(T_MAGENTA)$(BOLD)$(NAME) $(RESET)$(T_GREEN)created successfully$(RESET)"
+	@mkdir -p $(OBJ_DIR)
+	@mv $(OBJ) $(OBJ_DIR)
 
 # <-- Objects Creation --> #
 %.o: %.c
@@ -81,7 +86,7 @@ $(NAME): $(OBJ_SRC) $(OBJ_UTILS)
 
 # <-- Objects Destruction --> #
 clean:
-	@$(RM) $(OBJ_SRC) $(OBJ_UTILS)
+	@$(RM) $(OBJ_DIR)
 	@echo "🗑️  🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_RED)destroyed successfully$(RESET)"
 
 # <-- Clean Execution + bfl.a Destruction --> #

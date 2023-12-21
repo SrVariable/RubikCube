@@ -8,7 +8,7 @@
 
 typedef enum e_color
 {
-	E_WHITE,
+	E_PURPLE,
 	E_YELLOW,
 	E_GREEN,
 	E_RED,
@@ -16,6 +16,7 @@ typedef enum e_color
 	E_ORANGE
 }	t_color;
 
+# include <ctype.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -34,5 +35,10 @@ void	move_back(char ****cube);
 void	move_right(char ****cube);
 void	move_left(char ****cube);
 void	move_up(char ****cube);
+void	move_down(char ****cube);
+
+int		user_input(char ****cube);
+
+int		handle_movement(char ****cube, char input);
 
 #endif

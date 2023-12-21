@@ -59,8 +59,8 @@ static void set_faces(char ****cube)
 		{
 			switch (i)
 			{
-			case E_WHITE:
-				memcpy((*cube)[i][j], "⬜⬜⬜", sizeof("⬜⬜⬜"));
+			case E_PURPLE:
+				memcpy((*cube)[i][j], "🟪🟪🟪", sizeof("🟪🟪🟪"));
 				break;
 			case E_YELLOW:
 				memcpy((*cube)[i][j], "🟨🟨🟨", sizeof("🟨🟨🟨"));
