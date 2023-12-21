@@ -42,8 +42,8 @@ Run the program
 - Check memory leaks ✅
 - Display canvas ✅
 - Create movements ✅
+- Fix movements ✅
 - Handle user input ✅
-- Fix movements
 - Display the cube in the canvas
 - Automatic solver
 
