@@ -34,24 +34,3 @@ Run the program
 ```Shell
 ./rubik
 ```
-
-## To Do
-
-- Create cube ✅
-- Create canvas ✅
-- Check memory leaks ✅
-- Display canvas ✅
-- Create movements ✅
-- Fix movements ✅
-- Handle user input ✅
-- Display the cube in the canvas
-- Automatic solver
-
-## Emojis
-
-- Purple: 🟪
-- Yellow: 🟨
-- Green: 🟩
-- Red: 🟥
-- Blue: 🟦
-- Orange: 🟧
