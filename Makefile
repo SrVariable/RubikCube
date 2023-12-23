@@ -49,21 +49,23 @@ RM = rm -rf
 # <-- Directories --> #
 SRC_DIR = src/
 UTILS_DIR = utils/
-OBJ_DIR = obj/
+MOVEMENT_DIR = movement/
 
 # <-- Files --> #
 SRC_FILES = main.c
-UTILS_FILES = cube.c canvas.c movements.c \
-				input.c handler.c
+UTILS_FILES = cube.c canvas.c input.c handler.c
+MOVEMENT_FILES = uppercase.c uppercase_number.c uppercase_prime.c
 
 # <-- Directories + Files --> #
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 UTILS = $(addprefix $(UTILS_DIR), $(UTILS_FILES))
+MOVEMENT = $(addprefix $(MOVEMENT_DIR), $(MOVEMENT_FILES))
 
 # <-- Objects --> #
 OBJ_SRC = $(SRC:%.c=%.o)
 OBJ_UTILS = $(UTILS:%.c=%.o)
-OBJ = $(OBJ_SRC) $(OBJ_UTILS)
+OBJ_MOVEMENT = $(MOVEMENT:%.c=%.o)
+OBJ = $(OBJ_SRC) $(OBJ_UTILS) $(OBJ_MOVEMENT)
 
 # ========================================================================== #
 
@@ -75,8 +77,6 @@ $(NAME): $(OBJ)
 	@echo "✅ 🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_GREEN)created successfully$(RESET)"
 	@gcc $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "✅ 🦔 $(T_MAGENTA)$(BOLD)$(NAME) $(RESET)$(T_GREEN)created successfully$(RESET)"
-	@mkdir -p $(OBJ_DIR)
-	@mv $(OBJ) $(OBJ_DIR)
 
 # <-- Objects Creation --> #
 %.o: %.c
@@ -86,7 +86,7 @@ $(NAME): $(OBJ)
 
 # <-- Objects Destruction --> #
 clean:
-	@$(RM) $(OBJ_DIR)
+	@$(RM) $(OBJ)
 	@echo "🗑️  🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_RED)destroyed successfully$(RESET)"
 
 # <-- Clean Execution + bfl.a Destruction --> #

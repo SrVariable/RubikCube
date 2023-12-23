@@ -2,11 +2,15 @@
 
 int	user_input(char ****cube)
 {
-	char	input;
+	char	*input;
 	int		status;
 
-	printf("Introduce a movement (B, F, L, R, U, D) or exit (E, Q): ");
-	scanf("%c", &input);
-	status = handle_movement(cube, toupper(input));
+	input = (char *)calloc(1024, sizeof(char));
+	if (!input)
+		return (-1);
+	printf("Introduce a movement (B, F, L, R, U, D) or quit (Q): ");
+	scanf("%1024s", input);
+	status = handle_movement(cube, input);
+	free(input);
 	return (status);
 }
