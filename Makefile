@@ -53,8 +53,9 @@ MOVEMENT_DIR = movement/
 
 # <-- Files --> #
 SRC_FILES = main.c
-UTILS_FILES = cube.c canvas.c input.c handler.c
-MOVEMENT_FILES = uppercase.c uppercase_number.c uppercase_prime.c
+UTILS_FILES = cube.c canvas.c input.c menu.c
+MOVEMENT_FILES = handler.c \
+					uppercase.c uppercase_number.c uppercase_prime.c
 
 # <-- Directories + Files --> #
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))

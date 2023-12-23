@@ -44,7 +44,7 @@ static int	handle_uppercase(char ****cube, char input)
 		printf("Quitting...\n");
 		return (1);
 	default:
-		printf("Invalid movement\n");
+		printf("Invalid movement, press H for help!\n");
 		return (0);
 	}
 }
@@ -81,7 +81,7 @@ static int	handle_uppercase_number(char ****cube, char input)
 		printf("Quitting...\n");
 		return (1);
 	default:
-		printf("Invalid movement\n");
+		printf("Invalid movement, press H for help!\n");
 		return (0);
 	}
 }
@@ -130,7 +130,7 @@ static int	handle_uppercase_prime(char ****cube, char input)
 		printf("Quitting\n");
 		return (1);
 	default:
-		printf("Invalid movement\n");
+		printf("Invalid movement, press H for help!\n");
 		return (0);
 	}
 	return (0);
@@ -183,7 +183,12 @@ int	handle_movement(char ****cube, char *input)
 	status = 0;
 	for (int i = 0; input[i]; i++)
 	{
-		if (input[i + 1] && (input[i + 1] == '\'' || input[i + 1] == '2'))
+		if (input[i] == 'H' || input[i] == 'h')
+		{
+			display_help_menu();
+			return (0);
+		}
+		else if (input[i + 1] && (input[i + 1] == '\'' || input[i + 1] == '2'))
 			status = handle_double_character(cube, &input[i++]);
 		else
 			status = handle_single_character(cube, input[i]);

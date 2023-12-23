@@ -1,11 +1,11 @@
 #include "../include/rubik.h"
 
-void	start_game(char ****cube, char ***canvas)
+static void	start_game(char ****cube, char ***canvas)
 {
 	int	exit;
 
 	exit = 0;
-	while (!exit)
+	while (exit != 1)
 	{
 		printf("\n");
 		for (int i = 0; i < FACE; i++)
@@ -21,7 +21,7 @@ void	start_game(char ****cube, char ***canvas)
 	return ;
 }
 
-void	rubik_cube(void)
+static void	rubik_cube(void)
 {
 	char	***cube;
 	char	**canvas;
@@ -35,7 +35,6 @@ void	rubik_cube(void)
 		destroy_cube(&cube);
 		return ;
 	}
-	//display_canvas(canvas);
 	start_game(&cube, &canvas);
 	destroy_canvas(&canvas);
 	destroy_cube(&cube);

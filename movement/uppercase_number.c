@@ -40,3 +40,24 @@ void	move_down_2(char ****cube)
 	move_down(cube);
 	return ;
 }
+
+void	move_middle_2(char ****cube)
+{
+	move_middle(cube);
+	move_middle(cube);
+	return ;
+}
+
+void	move_equator_2(char ****cube)
+{
+	move_equator(cube);
+	move_equator(cube);
+	return ;
+}
+
+void	move_side_2(char ****cube)
+{
+	move_side(cube);
+	move_side(cube);
+	return ;
+}
