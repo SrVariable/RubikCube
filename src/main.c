@@ -35,7 +35,8 @@ static void	rubik_cube(void)
 		destroy_cube(&cube);
 		return ;
 	}
-	start_game(&cube, &canvas);
+	//start_game(&cube, &canvas);
+	display_canvas(canvas);
 	destroy_canvas(&canvas);
 	destroy_cube(&cube);
 	return ;
