@@ -216,10 +216,10 @@ void	move_side(char ****cube)
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			temp[(i + 1) * 4 + j - 4] = (*cube)[ORANGE][i][j + 4];
-			(*cube)[ORANGE][i][j + 4] = (*cube)[BLUE][i][j + 4];
-			(*cube)[BLUE][i][j + 4] = (*cube)[RED][i][j + 4];
-			(*cube)[RED][i][j + 4] = (*cube)[GREEN][i][j + 4];
+			temp[(i + 1) * 4 + j - 4] = (*cube)[ORANGE][1][(i + 1) * 4 + j - 4];
+			(*cube)[ORANGE][1][(i + 1) * 4 + j - 4] = (*cube)[BLUE][i][j + 4];
+			(*cube)[BLUE][i][j + 4] = (*cube)[RED][1][(i + 1) * 4 + j - 4];
+			(*cube)[RED][1][(i + 1) * 4 + j - 4] = (*cube)[GREEN][i][j + 4];
 			(*cube)[GREEN][i][j + 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
