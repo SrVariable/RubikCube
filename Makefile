@@ -50,6 +50,7 @@ RM = rm -rf
 SRC_DIR = src/
 UTILS_DIR = utils/
 MOVEMENT_DIR = movement/
+OBJ_DIR = obj/
 
 # <-- Files --> #
 SRC_FILES = main.c
@@ -63,10 +64,9 @@ UTILS = $(addprefix $(UTILS_DIR), $(UTILS_FILES))
 MOVEMENT = $(addprefix $(MOVEMENT_DIR), $(MOVEMENT_FILES))
 
 # <-- Objects --> #
-OBJ_SRC = $(SRC:%.c=%.o)
-OBJ_UTILS = $(UTILS:%.c=%.o)
-OBJ_MOVEMENT = $(MOVEMENT:%.c=%.o)
-OBJ = $(OBJ_SRC) $(OBJ_UTILS) $(OBJ_MOVEMENT)
+OBJ = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC)) \
+	  $(patsubst $(UTILS_DIR)%.c, $(OBJ_DIR)%.o, $(UTILS)) \
+	  $(patsubst $(MOVEMENT_DIR)%.c, $(OBJ_DIR)%.o, $(MOVEMENT))
 
 # ========================================================================== #
 
@@ -74,20 +74,34 @@ OBJ = $(OBJ_SRC) $(OBJ_UTILS) $(OBJ_MOVEMENT)
 all: $(NAME)
 
 # <--Library Creation-->#
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 	@echo "✅ 🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_GREEN)created successfully$(RESET)"
 	@gcc $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "✅ 🦔 $(T_MAGENTA)$(BOLD)$(NAME) $(RESET)$(T_GREEN)created successfully$(RESET)"
 
+# <-- Object Directory Creation --> #
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 # <-- Objects Creation --> #
-%.o: %.c
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@echo "🧩 🦔 $(T_WHITE)$(BOLD)Compiling $<...$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "🔨 🦔 $(T_BLUE)$(BOLD)$@ $(RESET)$(T_GREEN)created!$(RESET)"
+
+$(OBJ_DIR)%.o: $(UTILS_DIR)%.c
+	@echo "🧩 🦔 $(T_WHITE)$(BOLD)Compiling $<...$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "🔨 🦔 $(T_BLUE)$(BOLD)$@ $(RESET)$(T_GREEN)created!$(RESET)"
+
+$(OBJ_DIR)%.o: $(MOVEMENT_DIR)%.c
 	@echo "🧩 🦔 $(T_WHITE)$(BOLD)Compiling $<...$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "🔨 🦔 $(T_BLUE)$(BOLD)$@ $(RESET)$(T_GREEN)created!$(RESET)"
 
 # <-- Objects Destruction --> #
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ_DIR)
 	@echo "🗑️  🦔 $(T_YELLOW)$(BOLD)Objects $(RESET)$(T_RED)destroyed successfully$(RESET)"
 
 # <-- Clean Execution + bfl.a Destruction --> #
