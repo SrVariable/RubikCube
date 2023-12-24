@@ -4,7 +4,7 @@
 # define FACE 6
 # define ROW 3
 # define COLUMN 3
-# define SIZE 30
+# define SIZE 20
 
 # include <ctype.h>
 # include <stdio.h>
@@ -34,6 +34,7 @@ typedef enum e_color
 char	***create_cube(void);
 char	***destroy_cube(char ****cube);
 void 	display_cube(char ***cube);
+void	draw_cube(char ***canvas, char ***cube);
 
 // canvas.c
 

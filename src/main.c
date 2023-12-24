@@ -7,15 +7,8 @@ static void	start_game(char ****cube, char ***canvas)
 	exit = 0;
 	while (exit != 1)
 	{
-		printf("\n");
-		for (int i = 0; i < FACE; i++)
-		{
-			for (int j = 0; j < ROW; j++)
-			{
-				printf("\t%s\n", (*cube)[i][j]);
-			}
-			printf("\n");
-		}
+		draw_cube(canvas, *cube);
+		display_canvas(*canvas);
 		exit = user_input(cube);
 	}
 	return ;
@@ -35,8 +28,7 @@ static void	rubik_cube(void)
 		destroy_cube(&cube);
 		return ;
 	}
-	//start_game(&cube, &canvas);
-	display_canvas(canvas);
+	start_game(&cube, &canvas);
 	destroy_canvas(&canvas);
 	destroy_cube(&cube);
 	return ;

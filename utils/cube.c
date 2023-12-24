@@ -82,38 +82,195 @@ static void set_faces(char ****cube)
 	}
 }
 
-// TODO
-void	display_cube(char ***cube)
+static void	up_face(char ***canvas, char ***cube)
 {
-// 	int length = 36;
-// 	int center = length / 2 - 1;
-// 	int	distance = 2;
-// 	for (int i = 0; i < length; i++)
-// 	{
-// 		for (int j = 0; j < length; j++)
-// 		{
-// 			if (j == 0)
-// 				printf("\t");
-// 			if (i <= center + 1 && (j == center || j == center + 1))
-// 				printf("⬛");
-// 			else if (i == center + distance && j == center - distance + 1)
-// 				printf("⬛");
-// 			else if (i == center + distance && j == center + distance)
-// 			{
-// 				printf("⬛");
-// 				distance++;
-// 			}
-// 			else if (i > center - distance * 3 && j < center - distance + 2 && j > 7)
-// 				printf("🟦");
-// 			else if (i == center + distance && center + distance < length - 8 && (j > center - distance + 1 && j < center + distance))
-// 				printf("🟧");
-// 			else if (i == center + distance && center + distance >= length - 8 && (j < center - distance + 20 && j > center + distance - 19))
-// 				printf("🟧");
-// 			else
-// 				printf("🟪");
-// 		}
-// 		printf("\n");
-// 	}
+	int	offset = 4;
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			// Row 0
+				// Col 0
+			(*canvas)[0][(i * 4) + j + offset + (6 + 0)] = cube[ORANGE][0][j];
+			(*canvas)[1][(i * 4) + j + offset + (4 + 0)] = cube[ORANGE][0][j];
+			(*canvas)[1][(i * 4) + j + offset + (12 + 0)] = cube[ORANGE][0][j];
+			(*canvas)[2][(i * 4) + j + offset + (10 + 0)] = cube[ORANGE][0][j];
+				// Col 1
+			(*canvas)[0 + 2][(i * 4) + j + offset + (6 + 12)] = cube[ORANGE][0][j + 4];
+			(*canvas)[1 + 2][(i * 4) + j + offset + (4 + 12)] = cube[ORANGE][0][j + 4];
+			(*canvas)[1 + 2][(i * 4) + j + offset + (12 + 12)] = cube[ORANGE][0][j + 4];
+			(*canvas)[2 + 2][(i * 4) + j + offset + (10 + 12)] = cube[ORANGE][0][j + 4];
+				// Col 2
+			(*canvas)[0 + 4][(i * 4) + j + offset + (6 + 24)] = cube[ORANGE][0][j + 8];
+			(*canvas)[1 + 4][(i * 4) + j + offset + (4 + 24)] = cube[ORANGE][0][j + 8];
+			(*canvas)[1 + 4][(i * 4) + j + offset + (12 + 24)] = cube[ORANGE][0][j + 8];
+			(*canvas)[2 + 4][(i * 4) + j + offset + (12 + 20)] = cube[ORANGE][0][j + 8];
+
+			// Row 1
+				// Col 0
+			(*canvas)[2][(i * 4) + j + offset + (2 + 0)] = cube[ORANGE][1][j];
+			(*canvas)[3][(i * 4) + j + offset + (0 + 0)] = cube[ORANGE][1][j];
+			(*canvas)[3][(i * 4) + j + offset + (8 + 0)] = cube[ORANGE][1][j];
+			(*canvas)[4][(i * 4) + j + offset + (6 + 0)] = cube[ORANGE][1][j];
+				// Col 1
+			(*canvas)[2 + 2][(i * 4) + j + offset + (2 + 12)] = cube[ORANGE][1][j + 4];
+			(*canvas)[3 + 2][(i * 4) + j + offset + (0 + 12)] = cube[ORANGE][1][j + 4];
+			(*canvas)[3 + 2][(i * 4) + j + offset + (8 + 12)] = cube[ORANGE][1][j + 4];
+			(*canvas)[4 + 2][(i * 4) + j + offset + (6 + 10)] = cube[ORANGE][1][j + 4];
+				// Col 2
+			(*canvas)[2 + 4][(i * 4) + j + offset + (2 + 22)] = cube[ORANGE][1][j + 8];
+			(*canvas)[3 + 4][(i * 4) + j + offset + (0 + 20)] = cube[ORANGE][1][j + 8];
+			(*canvas)[3 + 4][(i * 4) + j + offset + (8 + 20)] = cube[ORANGE][1][j + 8];
+			(*canvas)[4 + 4][(i * 4) + j + offset + (6 + 18)] = cube[ORANGE][1][j + 8];
+
+			// Row 2
+				// Col 0
+			(*canvas)[4][(i * 4) + j + offset - (2 + 0)] = cube[ORANGE][2][j];
+			(*canvas)[5][(i * 4) + j + offset - (4 + 0)] = cube[ORANGE][2][j];
+			(*canvas)[5][(i * 4) + j + offset + (4 + 0)] = cube[ORANGE][2][j];
+			(*canvas)[6][(i * 4) + j + offset - (0 + 0)] = cube[ORANGE][2][j];
+				// Col 1
+			(*canvas)[4 + 2][(i * 4) + j + offset - (0 - 8)] = cube[ORANGE][2][j + 4];
+			(*canvas)[5 + 2][(i * 4) + j + offset - (4 - 8)] = cube[ORANGE][2][j + 4];
+			(*canvas)[5 + 2][(i * 4) + j + offset + (4 + 8)] = cube[ORANGE][2][j + 4];
+			(*canvas)[6 + 2][(i * 4) + j + offset - (2 - 10)] = cube[ORANGE][2][j + 4];
+				// Col 2
+			(*canvas)[4 + 4][(i * 4) + j + offset - (2 - 18)] = cube[ORANGE][2][j + 8];
+			(*canvas)[5 + 4][(i * 4) + j + offset - (4 - 16)] = cube[ORANGE][2][j + 8];
+			(*canvas)[5 + 4][(i * 4) + j + offset + (4 + 16)] = cube[ORANGE][2][j + 8];
+			(*canvas)[6 + 4][(i * 4) + j + offset - (2 - 18)] = cube[ORANGE][2][j + 8];
+		}
+	}
+}
+
+static void	front_face(char ***canvas, char ***cube)
+{
+	int	offset = 0;
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			// Row 0
+				// Col 0
+			(*canvas)[6][4 + j + offset - (2 + 2)] = cube[YELLOW][0][j];
+			(*canvas)[7][4 + j + offset - (2 + 2)] = cube[YELLOW][0][j];
+			(*canvas)[7][4 + j + offset - (2 - 2)] = cube[YELLOW][0][j];
+			(*canvas)[8][4 + j + offset - (2 - 2)] = cube[YELLOW][0][j];
+				// Col 1
+			(*canvas)[6 + 2][4 + j + offset - (2 - 6)] = cube[YELLOW][0][j + 4];
+			(*canvas)[7 + 2][4 + j + offset - (2 - 6)] = cube[YELLOW][0][j + 4];
+			(*canvas)[7 + 2][4 + j + offset - (2 - 10)] = cube[YELLOW][0][j + 4];
+			(*canvas)[8 + 2][4 + j + offset - (2 - 10)] = cube[YELLOW][0][j + 4];
+				// Col 2
+			(*canvas)[6 + 4][4 + j + offset - (2 - 14)] = cube[YELLOW][0][j + 8];
+			(*canvas)[7 + 4][4 + j + offset - (2 - 14)] = cube[YELLOW][0][j + 8];
+			(*canvas)[7 + 4][4 + j + offset - (2 - 18)] = cube[YELLOW][0][j + 8];
+			(*canvas)[8 + 4][4 + j + offset - (2 - 16)] = cube[YELLOW][0][j + 8];
+
+			// Row 1
+				// Col 0
+			(*canvas)[8][4 + j + offset - (2 + 2)] = cube[YELLOW][1][j];
+			(*canvas)[9][4 + j + offset - (2 + 2)] = cube[YELLOW][1][j];
+			(*canvas)[9][4 + j + offset - (2 - 2)] = cube[YELLOW][1][j];
+			(*canvas)[10][4 + j + offset - (2 - 2)] = cube[YELLOW][1][j];
+				// Col 1
+			(*canvas)[8 + 2][4 + j + offset - (2 - 6)] = cube[YELLOW][1][j + 4];
+			(*canvas)[9 + 2][4 + j + offset - (2 - 6)] = cube[YELLOW][1][j + 4];
+			(*canvas)[9 + 2][4 + j + offset - (2 - 10)] = cube[YELLOW][1][j + 4];
+			(*canvas)[10 + 2][4 + j + offset - (2 - 8)] = cube[YELLOW][1][j + 4];
+				// Col 2
+			(*canvas)[8 + 4][4 + j + offset - (2 - 12)] = cube[YELLOW][1][j + 8];
+			(*canvas)[9 + 4][4 + j + offset - (2 - 10)] = cube[YELLOW][1][j + 8];
+			(*canvas)[9 + 4][4 + j + offset - (2 - 14)] = cube[YELLOW][1][j + 8];
+			(*canvas)[10 + 4][4 + j + offset - (2 - 12)] = cube[YELLOW][1][j + 8];
+
+			// Row 2
+				// Col 0
+			(*canvas)[10][4 + j + offset - (2 + 2)] = cube[YELLOW][2][j];
+			(*canvas)[11][4 + j + offset - (2 + 2)] = cube[YELLOW][2][j];
+			(*canvas)[11][4 + j + offset - (2 - 2)] = cube[YELLOW][2][j];
+			(*canvas)[12][4 + j + offset - (2 + 0)] = cube[YELLOW][2][j];
+				// Col 1
+			(*canvas)[10 + 2][4 + j + offset - (2 - 4)] = cube[YELLOW][2][j + 4];
+			(*canvas)[11 + 2][4 + j + offset - (2 - 2)] = cube[YELLOW][2][j + 4];
+			(*canvas)[11 + 2][4 + j + offset - (2 - 6)] = cube[YELLOW][2][j + 4];
+			(*canvas)[12 + 2][4 + j + offset - (2 - 4)] = cube[YELLOW][2][j + 4];
+				// Col 2
+			(*canvas)[10 + 4][4 + j + offset - (2 - 8)] = cube[YELLOW][2][j + 8];
+			(*canvas)[11 + 4][4 + j + offset - (2 - 6)] = cube[YELLOW][2][j + 8];
+			(*canvas)[11 + 4][4 + j + offset - (2 - 10)] = cube[YELLOW][2][j + 8];
+			(*canvas)[12 + 4][4 + j + offset - (2 - 8)] = cube[YELLOW][2][j + 8];
+		}
+	}
+}
+
+static void	side_face(char ***canvas, char ***cube)
+{
+	int	offset = 18;
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+		// Row 0
+			// Col 0
+		(*canvas)[10][4 + j + offset + (6 + 0)] = cube[GREEN][0][j];
+		(*canvas)[11][4 + j + offset + (2 + 0)] = cube[GREEN][0][j];
+		(*canvas)[11][4 + j + offset + (6 + 0)] = cube[GREEN][0][j];
+		(*canvas)[12][4 + j + offset + (0 + 0)] = cube[GREEN][0][j];
+			// Col 1
+		(*canvas)[10 - 2][4 + j + offset + (6 + 8)] = cube[GREEN][0][j + 4];
+		(*canvas)[11 - 2][4 + j + offset + (2 + 8)] = cube[GREEN][0][j + 4];
+		(*canvas)[11 - 2][4 + j + offset + (6 + 8)] = cube[GREEN][0][j + 4];
+		(*canvas)[12 - 2][4 + j + offset + (2 + 8)] = cube[GREEN][0][j + 4];
+			// Col 2
+		(*canvas)[10 - 4][4 + j + offset + (6 + 16)] = cube[GREEN][0][j + 8];
+		(*canvas)[11 - 4][4 + j + offset + (2 + 16)] = cube[GREEN][0][j + 8];
+		(*canvas)[11 - 4][4 + j + offset + (6 + 16)] = cube[GREEN][0][j + 8];
+		(*canvas)[12 - 4][4 + j + offset + (2 + 16)] = cube[GREEN][0][j + 8];
+		// Row 1
+			// Col 0
+		(*canvas)[12][4 + j + offset + (4 + 0)] = cube[GREEN][1][j];
+		(*canvas)[13][4 + j + offset + (-2 + 0)] = cube[GREEN][1][j];
+		(*canvas)[13][4 + j + offset + (2 + 0)] = cube[GREEN][1][j];
+		(*canvas)[14][4 + j + offset + (-4 + 0)] = cube[GREEN][1][j];
+			// Col 1
+		(*canvas)[12 - 2][4 + j + offset + (4 + 10)] = cube[GREEN][1][j + 4];
+		(*canvas)[13 - 2][4 + j + offset + (-2 + 12)] = cube[GREEN][1][j + 4];
+		(*canvas)[13 - 2][4 + j + offset + (2 + 12)] = cube[GREEN][1][j + 4];
+		(*canvas)[14 - 2][4 + j + offset + (-4 + 12)] = cube[GREEN][1][j + 4];
+			// Col 2
+		(*canvas)[12 - 4][4 + j + offset + (4 + 18)] = cube[GREEN][1][j + 8];
+		(*canvas)[13 - 4][4 + j + offset + (-2 + 20)] = cube[GREEN][1][j + 8];
+		(*canvas)[13 - 4][4 + j + offset + (2 + 20)] = cube[GREEN][1][j + 8];
+		(*canvas)[14 - 4][4 + j + offset + (-4 + 22)] = cube[GREEN][1][j + 8];
+		// Row 2
+			// Col 0
+		(*canvas)[14][4 + j + offset - (0 - 0)] = cube[GREEN][2][j];
+		(*canvas)[15][4 + j + offset - (6 - 0)] = cube[GREEN][2][j];
+		(*canvas)[15][4 + j + offset - (2 - 0)] = cube[GREEN][2][j];
+		(*canvas)[16][4 + j + offset - (8 - 0)] = cube[GREEN][2][j];
+			// Col 1
+		(*canvas)[14 - 2][4 + j + offset - (0 - 12)] = cube[GREEN][2][j + 4];
+		(*canvas)[15 - 2][4 + j + offset - (6 - 12)] = cube[GREEN][2][j + 4];
+		(*canvas)[15 - 2][4 + j + offset - (2 - 12)] = cube[GREEN][2][j + 4];
+		(*canvas)[16 - 2][4 + j + offset - (8 - 12)] = cube[GREEN][2][j + 4];
+			// Col 2
+		(*canvas)[14 - 4][4 + j + offset - (0 - 22)] = cube[GREEN][2][j + 8];
+		(*canvas)[15 - 4][4 + j + offset - (6 - 24)] = cube[GREEN][2][j + 8];
+		(*canvas)[15 - 4][4 + j + offset - (2 - 24)] = cube[GREEN][2][j + 8];
+		(*canvas)[16 - 4][4 + j + offset - (8 - 24)] = cube[GREEN][2][j + 8];
+		}
+	}
+}
+
+void	draw_cube(char ***canvas, char ***cube)
+{
+	up_face(canvas, cube);
+	front_face(canvas, cube);
+	side_face(canvas, cube);
 }
 
 char	***create_cube(void)
