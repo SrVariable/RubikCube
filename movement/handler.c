@@ -5,40 +5,31 @@ static int	handle_uppercase(char ****cube, char input)
 	switch (input)
 	{
 	case 'B':
-		printf("%c\n", input);
 		move_back(cube);
 		return (0);
 	case 'F':
-		printf("%c\n", input);
 		move_front(cube);
 		return (0);
 	case 'L':
-		printf("%c\n", input);
 		move_left(cube);
 		return (0);
 	case 'R':
-		printf("%c\n", input);
 		move_right(cube);
 		return (0);
 	case 'U':
-		printf("%c\n", input);
 		move_up(cube);
 		return (0);
 	case 'D':
-		printf("%c\n", input);
 		move_down(cube);
 		return (0);
 	case 'M':
-		printf("%c\n", input);
 		move_middle(cube);
 		return (0);
-	case 'S':
-		printf("%c\n", input);
-		move_side(cube);
-		return (0);
 	case 'E':
-		printf("%c\n", input);
 		move_equator(cube);
+		return (0);
+	case 'S':
+		move_side(cube);
 		return (0);
 	case 'Q':
 		printf("Quitting...\n");
@@ -54,28 +45,31 @@ static int	handle_uppercase_number(char ****cube, char input)
 	switch (input)
 	{
 	case 'B':
-		printf("%c2\n", input);
 		move_back_2(cube);
 		return (0);
 	case 'F':
-		printf("%c2\n", input);
 		move_front_2(cube);
 		return (0);
 	case 'L':
-		printf("%c2\n", input);
 		move_left_2(cube);
 		return (0);
 	case 'R':
-		printf("%c2\n", input);
 		move_right_2(cube);
 		return (0);
 	case 'U':
-		printf("%c2\n", input);
 		move_up_2(cube);
 		return (0);
 	case 'D':
-		printf("%c2\n", input);
 		move_down_2(cube);
+		return (0);
+	case 'M':
+		move_middle_2(cube);
+		return (0);
+	case 'E':
+		move_equator_2(cube);
+		return (0);
+	case 'S':
+		move_side_2(cube);
 		return (0);
 	case 'Q':
 		printf("Quitting...\n");
@@ -91,39 +85,30 @@ static int	handle_uppercase_prime(char ****cube, char input)
 	switch (input)
 	{
 	case 'B':
-		printf("%c\'\n", input);
 		move_back_prime(cube);
 		return (0);
 	case 'F':
-		printf("%c\'\n", input);
 		move_front_prime(cube);
 		return (0);
 	case 'L':
-		printf("%c\'\n", input);
 		move_left_prime(cube);
 		return (0);
 	case 'R':
-		printf("%c\'\n", input);
 		move_right_prime(cube);
 		return (0);
 	case 'U':
-		printf("%c\'\n", input);
 		move_up_prime(cube);
 		return (0);
 	case 'D':
-		printf("%c\'\n", input);
 		move_down_prime(cube);
 		return (0);
 	case 'M':
-		printf("%c\'\n", input);
 		move_middle_prime(cube);
 		return (0);
 	case 'E':
-		printf("%c\'\n", input);
 		move_equator_prime(cube);
 		return (0);
 	case 'S':
-		printf("%c\'\n", input);
 		move_side_prime(cube);
 		return (0);
 	case 'Q':

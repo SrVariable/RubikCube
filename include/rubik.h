@@ -33,7 +33,6 @@ typedef enum e_color
 
 char	***create_cube(void);
 char	***destroy_cube(char ****cube);
-void 	display_cube(char ***cube);
 void	draw_cube(char ***canvas, char ***cube);
 
 // canvas.c
