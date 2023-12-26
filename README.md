@@ -125,7 +125,7 @@ This will do B2, F, L', R.
 
 > [!NOTE]
 >
-> If you introduce more than one movement in a single turn it will do each movement one by one. After each movement it will display the cube with the respective movement applied.
+> If you introduce more than one movement in a single turn, it will directly display the cube with the respective movements applied.
 
 > [!TIP]
 > 
