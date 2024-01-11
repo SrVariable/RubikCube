@@ -218,8 +218,8 @@ void	move_side_prime(char ****cube)
 		{
 			temp[(i + 1) * 4 + j - 4] = (*cube)[ORANGE][1][(i + 1) * 4 + j - 4];
 			(*cube)[ORANGE][1][(i + 1) * 4 + j - 4] = (*cube)[GREEN][i][j + 4];
-			(*cube)[GREEN][i][j + 4] = (*cube)[RED][1][(i + 1) * 4 + j - 4];
-			(*cube)[RED][1][(i + 1) * 4 + j - 4] = (*cube)[BLUE][i][j + 4];
+			(*cube)[GREEN][i][j + 4] = (*cube)[RED][i][j + 4];
+			(*cube)[RED][i][j + 4] = (*cube)[BLUE][i][j + 4];
 			(*cube)[BLUE][i][j + 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
