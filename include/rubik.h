@@ -77,6 +77,42 @@ void	move_middle_prime(char ****cube);
 void	move_equator_prime(char ****cube);
 void	move_side_prime(char ****cube);
 
+// lovercase.c
+void	rotate_x(char ****cube);
+void	rotate_y(char ****cube);
+void	rotate_z(char ****cube);
+void	move_u(char ****cube);
+void	move_r(char ****cube);
+void	move_f(char ****cube);
+void	move_d(char ****cube);
+void	move_l(char ****cube);
+void	move_b(char ****cube);
+
+// lowercase_number.c
+
+void	rotate_x_2(char ****cube);
+void	rotate_y_2(char ****cube);
+void	rotate_z_2(char ****cube);
+void	move_u_2(char ****cube);
+void	move_r_2(char ****cube);
+void	move_f_2(char ****cube);
+void	move_d_2(char ****cube);
+void	move_l_2(char ****cube);
+void	move_b_2(char ****cube);
+
+
+// lowercase_prime.c
+
+void	rotate_x_prime(char ****cube);
+void	rotate_y_prime(char ****cube);
+void	rotate_z_prime(char ****cube);
+void	move_u_prime(char ****cube);
+void	move_r_prime(char ****cube);
+void	move_f_prime(char ****cube);
+void	move_d_prime(char ****cube);
+void	move_l_prime(char ****cube);
+void	move_b_prime(char ****cube);
+
 // input.c
 
 int		user_input(char ****cube);

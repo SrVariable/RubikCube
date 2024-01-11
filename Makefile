@@ -56,7 +56,8 @@ OBJ_DIR = obj/
 SRC_FILES = main.c
 UTILS_FILES = cube.c canvas.c input.c menu.c
 MOVEMENT_FILES = handler.c \
-					uppercase.c uppercase_number.c uppercase_prime.c
+					uppercase.c uppercase_number.c uppercase_prime.c \
+					lowercase.c lowercase_number.c lowercase_prime.c
 
 # <-- Directories + Files --> #
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))

@@ -125,11 +125,75 @@ static int	handle_lowercase(char ****cube, char input)
 {
 	switch (input)
 	{
+	case 'x':
+		rotate_x(cube);
+		return (0);
+	case 'y':
+		rotate_y(cube);
+		return (0);
+	case 'z':
+		rotate_z(cube);
+		return (0);
+	case 'u':
+		move_u(cube);
+		return (0);
+	case 'r':
+		move_r(cube);
+		return (0);
+	case 'f':
+		move_f(cube);
+		return (0);
+	case 'd':
+		move_d(cube);
+		return (0);
+	case 'l':
+		move_l(cube);
+		return (0);
+	case 'b':
+		move_b(cube);
+		return (0);
 	case 'q':
 		printf("Quitting...\n");
 		return (1);
 	}
-	printf("Lowercase\n");
+	return (0);
+}
+
+static int	handle_lowercase_number(char ****cube, char input)
+{
+	switch (input)
+	{
+	case 'x':
+		rotate_x_2(cube);
+		return (0);
+	case 'y':
+		rotate_y_2(cube);
+		return (0);
+	case 'z':
+		rotate_z_2(cube);
+		return (0);
+	case 'u':
+		move_u_2(cube);
+		return (0);
+	case 'r':
+		move_r_2(cube);
+		return (0);
+	case 'f':
+		move_f_2(cube);
+		return (0);
+	case 'd':
+		move_d_2(cube);
+		return (0);
+	case 'l':
+		move_l_2(cube);
+		return (0);
+	case 'b':
+		move_b_2(cube);
+		return (0);
+	case 'q':
+		printf("Quitting...\n");
+		return (1);
+	}
 	return (0);
 }
 
@@ -137,11 +201,37 @@ static int	handle_lowercase_prime(char ****cube, char input)
 {
 	switch (input)
 	{
+	case 'x':
+		rotate_x_prime(cube);
+		return (0);
+	case 'y':
+		rotate_y_prime(cube);
+		return (0);
+	case 'z':
+		rotate_z_prime(cube);
+		return (0);
+	case 'u':
+		move_u_prime(cube);
+		return (0);
+	case 'r':
+		move_r_prime(cube);
+		return (0);
+	case 'f':
+		move_f_prime(cube);
+		return (0);
+	case 'd':
+		move_d_prime(cube);
+		return (0);
+	case 'l':
+		move_l_prime(cube);
+		return (0);
+	case 'b':
+		move_b_prime(cube);
+		return (0);
 	case 'q':
 		printf("Quitting...\n");
 		return (1);
 	}
-	printf("Lowercase prime\n");
 	return (0);
 }
 
@@ -155,7 +245,7 @@ static int	handle_single_character(char ****cube, char input)
 static int	handle_double_character(char ****cube, char *input)
 {
 	if (input[1] == '2')
-		return (handle_uppercase_number(cube, input[0]));
+		return (islower(input[0]) ? handle_lowercase_number(cube, input[0]) : handle_uppercase_number(cube, input[0]));
 	else if (input[1] == '\'')
 		return (islower(input[0]) ? handle_lowercase_prime(cube, input[0]) : handle_uppercase_prime(cube, input[0]));
 	return (0);
