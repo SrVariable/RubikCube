@@ -11,7 +11,6 @@ static void	start_game(char ****cube, char ***canvas)
 		display_canvas(*canvas);
 		exit = user_input(cube);
 	}
-	return ;
 }
 
 static void	rubik_cube(void)
@@ -31,7 +30,6 @@ static void	rubik_cube(void)
 	start_game(&cube, &canvas);
 	destroy_canvas(&canvas);
 	destroy_cube(&cube);
-	return ;
 }
 
 int	main(void)

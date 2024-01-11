@@ -28,7 +28,6 @@ void	move_back(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[PURPLE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_front(char ****cube)
@@ -58,7 +57,6 @@ void	move_front(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[YELLOW][2][i] = temp[i];
-	return ;
 }
 
 void	move_left(char ****cube)
@@ -89,7 +87,6 @@ void	move_left(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[BLUE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_right(char ****cube)
@@ -119,7 +116,6 @@ void	move_right(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[GREEN][2][i] = temp[i];
-	return ;
 }
 
 void	move_up(char ****cube)
@@ -145,7 +141,6 @@ void	move_up(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[ORANGE][2][i] = temp[i];
-	return ;
 }
 
 void	move_down(char ****cube)
@@ -172,7 +167,6 @@ void	move_down(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[RED][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_middle(char ****cube)
@@ -190,7 +184,6 @@ void	move_middle(char ****cube)
 			(*cube)[RED][1][(i + 1) * 4 + j - 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
-	return ;
 }
 
 void	move_equator(char ****cube)
@@ -205,7 +198,6 @@ void	move_equator(char ****cube)
 		(*cube)[PURPLE][1][i] = (*cube)[GREEN][1][i];
 		(*cube)[GREEN][1][i] = temp[i];
 	}
-	return ;
 }
 
 void	move_side(char ****cube)
@@ -223,5 +215,4 @@ void	move_side(char ****cube)
 			(*cube)[GREEN][i][j + 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
-	return ;
 }

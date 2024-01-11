@@ -27,7 +27,6 @@ void	move_back_prime(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[PURPLE][2][i] = temp[i];
-	return ;
 }
 
 void	move_front_prime(char ****cube)
@@ -58,7 +57,6 @@ void	move_front_prime(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[YELLOW][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_left_prime(char ****cube)
@@ -88,7 +86,6 @@ void	move_left_prime(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[BLUE][2][i] = temp[i];
-	return ;
 }
 
 void	move_right_prime(char ****cube)
@@ -119,7 +116,6 @@ void	move_right_prime(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[GREEN][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_up_prime(char ****cube)
@@ -146,7 +142,6 @@ void	move_up_prime(char ****cube)
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < 4; j++)
 			(*cube)[ORANGE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
-	return ;
 }
 
 void	move_down_prime(char ****cube)
@@ -172,7 +167,6 @@ void	move_down_prime(char ****cube)
 	}
 	for (int i = 0; i < 12; i++)
 		(*cube)[RED][2][i] = temp[i];
-	return ;
 }
 
 void	move_middle_prime(char ****cube)
@@ -190,7 +184,6 @@ void	move_middle_prime(char ****cube)
 			(*cube)[ORANGE][i][j + 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
-	return ;
 }
 
 void	move_equator_prime(char ****cube)
@@ -205,7 +198,6 @@ void	move_equator_prime(char ****cube)
 		(*cube)[PURPLE][1][i] = (*cube)[BLUE][1][i];
 		(*cube)[BLUE][1][i] = temp[i];
 	}
-	return ;
 }
 
 void	move_side_prime(char ****cube)
@@ -223,5 +215,4 @@ void	move_side_prime(char ****cube)
 			(*cube)[BLUE][i][j + 4] = temp[(i + 1) * 4 + j - 4];
 		}
 	}
-	return ;
 }
