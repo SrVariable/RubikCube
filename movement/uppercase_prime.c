@@ -1,5 +1,10 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Reverse move the back face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_back_prime(char ****cube)
 {
 	char	temp[12];
@@ -29,6 +34,11 @@ void	move_back_prime(char ****cube)
 		(*cube)[PURPLE][2][i] = temp[i];
 }
 
+/**
+ * @brief Reverse move the front face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_front_prime(char ****cube)
 {
 	char	temp[12];
@@ -59,6 +69,11 @@ void	move_front_prime(char ****cube)
 			(*cube)[YELLOW][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Reverse move the left face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_left_prime(char ****cube)
 {
 	char	temp[12];
@@ -88,6 +103,11 @@ void	move_left_prime(char ****cube)
 		(*cube)[BLUE][2][i] = temp[i];
 }
 
+/**
+ * @brief Reverse move the right face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_right_prime(char ****cube)
 {
 	char	temp[12];
@@ -118,6 +138,11 @@ void	move_right_prime(char ****cube)
 			(*cube)[GREEN][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Reverse move the up face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_up_prime(char ****cube)
 {
 	char	temp[12];
@@ -144,6 +169,11 @@ void	move_up_prime(char ****cube)
 			(*cube)[ORANGE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Reverse move the down face
+ * 
+ * @param cube The address of the cube
+ */
 void	move_down_prime(char ****cube)
 {
 	char	temp[12];
@@ -169,6 +199,11 @@ void	move_down_prime(char ****cube)
 		(*cube)[RED][2][i] = temp[i];
 }
 
+/**
+ * @brief Reverse move the middle layer
+ * 
+ * @param cube The address of the cube
+ */
 void	move_middle_prime(char ****cube)
 {
 	char	temp[12];
@@ -186,6 +221,11 @@ void	move_middle_prime(char ****cube)
 	}
 }
 
+/**
+ * @brief Reverse move the equator layer
+ * 
+ * @param cube The address of the cube
+ */
 void	move_equator_prime(char ****cube)
 {
 	char	temp[12];
@@ -200,6 +240,11 @@ void	move_equator_prime(char ****cube)
 	}
 }
 
+/**
+ * @brief Reverse move the side layer
+ * 
+ * @param cube The address of the cube
+ */
 void	move_side_prime(char ****cube)
 {
 	char	temp[12];

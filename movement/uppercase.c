@@ -1,5 +1,10 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Rotate the back face 90 degrees counterclockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_back(char ****cube)
 {
 	char	temp[12];
@@ -30,6 +35,11 @@ void	move_back(char ****cube)
 			(*cube)[PURPLE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Rotate the front face 90 degrees clockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_front(char ****cube)
 {
 	char	temp[12];
@@ -59,6 +69,11 @@ void	move_front(char ****cube)
 		(*cube)[YELLOW][2][i] = temp[i];
 }
 
+/**
+ * @brief Rotate the left face 90 degrees counterclockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_left(char ****cube)
 {
 	char	temp[12];
@@ -89,6 +104,11 @@ void	move_left(char ****cube)
 			(*cube)[BLUE][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Rotate the right face 90 degrees clockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_right(char ****cube)
 {
 	char	temp[12];
@@ -118,6 +138,11 @@ void	move_right(char ****cube)
 		(*cube)[GREEN][2][i] = temp[i];
 }
 
+/**
+ * @brief Rotate the up face 90 degrees clockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_up(char ****cube)
 {
 	char	temp[12];
@@ -143,6 +168,11 @@ void	move_up(char ****cube)
 		(*cube)[ORANGE][2][i] = temp[i];
 }
 
+/**
+ * @brief Rotate the down face 90 degrees counterclockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_down(char ****cube)
 {
 	char	temp[12];
@@ -169,6 +199,14 @@ void	move_down(char ****cube)
 			(*cube)[RED][i][j + 8] = temp[(i + 1) * 4 + j - 4];
 }
 
+/**
+ * @brief Rotate the middle layer 90 degrees counterclockwise
+ * 
+ * @details Rotate the middle layer parallel to the right and
+ * left faces 90 degrees counterclockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_middle(char ****cube)
 {
 	char	temp[12];
@@ -186,6 +224,14 @@ void	move_middle(char ****cube)
 	}
 }
 
+/**
+ * @brief Rotate the middle layer 90 degrees counterclockwise
+ * 
+ * @details Rotate the middle layer parallel to the up and
+ * down faces 90 degrees counterclockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_equator(char ****cube)
 {
 	char	temp[12];
@@ -200,6 +246,14 @@ void	move_equator(char ****cube)
 	}
 }
 
+/**
+ * @brief Rotate the middle layer 90 degrees clockwise
+ * 
+ * @details Rotate the middle layer parallel to the front
+ * and back faces 90 degrees clockwise
+ * 
+ * @param cube The address of the cube
+ */
 void	move_side(char ****cube)
 {
 	char	temp[12];

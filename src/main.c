@@ -1,5 +1,13 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Start the game
+ * 
+ * @details Start the game and handle the user input
+ * 
+ * @param cube The address of the cube
+ * @param canvas The address of the canvas
+ */
 static void	start_game(char ****cube, char ***canvas)
 {
 	int	exit;
@@ -13,6 +21,11 @@ static void	start_game(char ****cube, char ***canvas)
 	}
 }
 
+/**
+ * @brief Set up the Rubik's cube
+ * 
+ * @details Set up the Rubik's cube and start the game
+ */
 static void	rubik_cube(void)
 {
 	char	***cube;

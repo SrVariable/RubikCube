@@ -1,5 +1,15 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Free the memory allocated for the Rubik's cube
+ * 
+ * @details Free the memory allocated for the Rubik's cube
+ * and set the pointer to NULL
+ * 
+ * @param cube The address of the cube to destroy
+ * 
+ * @return - NULL
+ */
 char	***destroy_cube(char ****cube)
 {
 	int	end;
@@ -27,6 +37,15 @@ char	***destroy_cube(char ****cube)
 	return (NULL);
 }
 
+/**
+ * @brief Initialise the Rubik's cube
+ * 
+ * @details Allocate memory for the Rubik's cube and set
+ * all the cells to '\0'
+ * 
+ * @return - The Rubik's cube if it was initialised successfully,
+ * @return - NULL if an error occured
+ */
 static char	***initialise_cube(void)
 {
 	char	***cube;
@@ -51,6 +70,11 @@ static char	***initialise_cube(void)
 	return (cube);
 }
 
+/**
+ * @brief Set the faces of the Rubik's cube
+ * 
+ * @param cube The address of the cube
+ */
 static void set_faces(char ****cube)
 {
 	for (int i = 0; i < FACE; i++)
@@ -82,6 +106,12 @@ static void set_faces(char ****cube)
 	}
 }
 
+/**
+ * @brief Draw the up face of the Rubik's cube
+ * 
+ * @param canvas The address of the canvas
+ * @param cube The address of the cube
+ */
 static void	up_face(char ***canvas, char ***cube)
 {
 	int	offset = 4;
@@ -144,6 +174,12 @@ static void	up_face(char ***canvas, char ***cube)
 	}
 }
 
+/**
+ * @brief Draw the front face of the Rubik's cube
+ * 
+ * @param canvas The address of the canvas
+ * @param cube The address of the cube
+ */
 static void	front_face(char ***canvas, char ***cube)
 {
 	int	offset = 0;
@@ -206,6 +242,12 @@ static void	front_face(char ***canvas, char ***cube)
 	}
 }
 
+/**
+ * @brief Draw the side face of the Rubik's cube
+ * 
+ * @param canvas The address of the canvas
+ * @param cube The address of the cube
+ */
 static void	side_face(char ***canvas, char ***cube)
 {
 	int	offset = 18;
@@ -266,6 +308,14 @@ static void	side_face(char ***canvas, char ***cube)
 	}
 }
 
+/**
+ * @brief Draw the Rubik's cube
+ * 
+ * @details Draw the Rubik's cube on the canvas
+ * 
+ * @param canvas The address of the canvas
+ * @param cube The address of the cube
+ */
 void	draw_cube(char ***canvas, char ***cube)
 {
 	up_face(canvas, cube);
@@ -273,6 +323,12 @@ void	draw_cube(char ***canvas, char ***cube)
 	side_face(canvas, cube);
 }
 
+/**
+ * @brief Create the Rubik's cube
+ * 
+ * @return - The Rubik's cube if it was created successfully,
+ * @return - NULL if an error occured
+ */
 char	***create_cube(void)
 {
 	char	***cube;

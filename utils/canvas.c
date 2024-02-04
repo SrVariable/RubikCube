@@ -1,5 +1,15 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Free the memory allocated for the canvas
+ * 
+ * @details Free the memory allocated for the canvas
+ * and set the pointer to NULL
+ * 
+ * @param canvas The address of the canvas to destroy
+ * 
+ * @return - NULL
+ */
 char	**destroy_canvas(char ***canvas)
 {
 	for (int i = 0; i < SIZE ; i++)
@@ -12,6 +22,15 @@ char	**destroy_canvas(char ***canvas)
 	return (NULL);
 }
 
+/**
+ * @brief Initialise the canvas
+ * 
+ * @details Allocate memory for the canvas and set
+ * all the cells to ' '
+ * 
+ * @return - The canvas if it was initialised successfully,
+ * @return - NULL if an error occured
+ */
 static char	**initialise_canvas(void)
 {
 	char	**canvas;
@@ -30,6 +49,13 @@ static char	**initialise_canvas(void)
 	return (canvas);
 }
 
+/**
+ * @brief Display the canvas
+ * 
+ * @details Display the canvas on the standard output
+ * 
+ * @param canvas The canvas to display
+ */
 void	display_canvas(char **canvas)
 {
 	for (int i = 0; i < SIZE - 3; i++)
@@ -42,6 +68,12 @@ void	display_canvas(char **canvas)
 	}
 }
 
+/**
+ * @brief Create the canvas
+ * 
+ * @return - The canvas if it was created successfully,
+ * @return - NULL if an error occured
+ */
 char	**create_canvas(void)
 {
 	char	**canvas;
