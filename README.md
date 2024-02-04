@@ -56,7 +56,7 @@ Run the program
 
 ### B
 
-Rotate the B face 90º coounterclockwise.
+Rotate the B face 90º counterclockwise.
 
 ![image](https://github.com/SrVariable/RubikCube/assets/96599624/bf3ef4ba-4a76-4268-82b5-d616c9248e09)
 
