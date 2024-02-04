@@ -1,5 +1,10 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Display the help menu
+ * 
+ * @details Display the help menu on the standard output
+ */
 void	display_help_menu(void)
 {
 	printf("\

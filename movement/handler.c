@@ -1,5 +1,14 @@
 #include "../include/rubik.h"
 
+/**
+ * @brief Handle uppercase movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_uppercase(char ****cube, char input)
 {
 	switch (input)
@@ -40,6 +49,15 @@ static int	handle_uppercase(char ****cube, char input)
 	}
 }
 
+/**
+ * @brief Handle uppercase with a number movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_uppercase_number(char ****cube, char input)
 {
 	switch (input)
@@ -80,6 +98,15 @@ static int	handle_uppercase_number(char ****cube, char input)
 	}
 }
 
+/**
+ * @brief Handle uppercase prime movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_uppercase_prime(char ****cube, char input)
 {
 	switch (input)
@@ -121,6 +148,15 @@ static int	handle_uppercase_prime(char ****cube, char input)
 	return (0);
 }
 
+/**
+ * @brief Handle lowercase movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_lowercase(char ****cube, char input)
 {
 	switch (input)
@@ -159,6 +195,15 @@ static int	handle_lowercase(char ****cube, char input)
 	return (0);
 }
 
+/**
+ * @brief Handle lowercase with number movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_lowercase_number(char ****cube, char input)
 {
 	switch (input)
@@ -197,6 +242,15 @@ static int	handle_lowercase_number(char ****cube, char input)
 	return (0);
 }
 
+/**
+ * @brief Handle lowercase prime movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_lowercase_prime(char ****cube, char input)
 {
 	switch (input)
@@ -235,6 +289,15 @@ static int	handle_lowercase_prime(char ****cube, char input)
 	return (0);
 }
 
+/**
+ * @brief Handle movement when is single character
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_single_character(char ****cube, char input)
 {
 	if (islower(input))
@@ -242,6 +305,15 @@ static int	handle_single_character(char ****cube, char input)
 	return (handle_uppercase(cube, input));
 }
 
+/**
+ * @brief Handle movement when is double character
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+*/
 static int	handle_double_character(char ****cube, char *input)
 {
 	if (input[1] == '2')
@@ -251,6 +323,16 @@ static int	handle_double_character(char ****cube, char *input)
 	return (0);
 }
 
+/**
+ * @brief Handle the movement
+ * 
+ * @param cube The address of the cube
+ * @param input The input to handle
+ * 
+ * @return - 0 if the movement was handled successfully
+ * @return - 1 if the user wants to quit
+ * @return - -1 if an error occured
+ */
 int	handle_movement(char ****cube, char *input)
 {
 	int	status;
