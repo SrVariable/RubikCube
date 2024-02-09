@@ -54,59 +54,32 @@ Run the program
 
 ## Movements
 
-### B
+![Uppercase movements](https://github.com/SrVariable/RubikCube/assets/96599624/a7102fc5-2354-4d95-9520-68ba14de396d)
+![Lowercase movements](https://github.com/SrVariable/RubikCube/assets/96599624/e6f0029b-6b55-4b9f-aad6-2477b301b7ff)
 
-Rotate the B face 90º counterclockwise.
+### Uppercase
 
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/bf3ef4ba-4a76-4268-82b5-d616c9248e09)
+- **B**: Rotate the B face 90º counterclockwise.
+- **F**: Rotate the F face 90º clockwise.
+- **L**: Rotate the L face 90º counterclockwise.
+- **R**: Rotate the R face 90º clockwise.
+- **U**: Rotate the U face 90º clockwise.
+- **D**: Rotate the D face 90º counterclockwise
+- **M**: Rotate the middle layer parallel to the R and L faces 90º counterclockwise.
+- **E**: Rotate the middle layer parallel to the U and D faces 90º counterclockwise.
+- **S**: Rotate the middle layer parallel to the F and B faces 90º clockwise.
 
-### F
+### Lowercase
 
-Rotate the F face 90º clockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/04a1aafa-2142-439a-a28d-bdd2ff8065a0)
-
-### L
-
-Rotate the L face 90º counterclockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/1024e8f6-50c9-4b28-b785-4a3b43acac15)
-
-### R
-
-Rotate the R face 90º clockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/e70b8213-7262-4bfd-8a86-ad4b2d3a7b7e)
-
-### U
-
-Rotate the U face 90º clockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/dfd7de1a-4753-49f0-be05-5f770b8015cd)
-
-### D
-
-Rotate the D face 90º counterclockwise
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/7ecdad07-3fff-41e6-80c8-81aca961d771)
-
-### M
-
-Rotate the middle layer parallel to the R and L faces 90º counterclockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/17a55662-69bf-4c67-a367-72717774ca22)
-
-### E
-
-Rotate the middle layer parallel to the U and D faces 90º counterclockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/e40616d0-7d62-4521-b5b6-34bbfdfe6a96)
-
-### S
-
-Rotate the middle layer parallel to the F and B faces 90º clockwise.
-
-![image](https://github.com/SrVariable/RubikCube/assets/96599624/49b210bd-0db1-445d-a1ff-beff1241bca3)
+- **b**: Rotate the B face and the middle layer parallel to the F and B faces 90º counterclockwise.
+- **f**: Rotate the F face and the middle layer parallel to the F and B faces 90º clockwise.
+- **l**: Rotate the L face and middle layer parallel to the R and L faces 90º counterclockwise.
+- **r**: Rotate the R face and middle layer parallel to the R and L faces 90º clockwise.
+- **u**: Rotate the U face and middle layer parallel to the U and D faces face 90º clockwise.
+- **d**: Rotate the D face and middle layer parallel to the U and D faces face 90º counterclockwise
+- **x**: Rotate the cube in the X axis 90º counterclockwise.
+- **y**: Rotate the cube in the Y axis 90º counterclockwise.
+- **z**: Rotate the cube in the Z axis 90º clockwise.
 
 > [!NOTE]
 > Adding 2 after the letter will make the same movement twice. So B2 is the same as doing B B.
