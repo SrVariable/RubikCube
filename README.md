@@ -77,8 +77,8 @@ Run the program
 - **r**: Rotate the R face and middle layer parallel to the R and L faces 90º clockwise.
 - **u**: Rotate the U face and middle layer parallel to the U and D faces face 90º clockwise.
 - **d**: Rotate the D face and middle layer parallel to the U and D faces face 90º counterclockwise
-- **x**: Rotate the cube in the X axis 90º counterclockwise.
-- **y**: Rotate the cube in the Y axis 90º counterclockwise.
+- **x**: Rotate the cube in the X axis 90º clockwise.
+- **y**: Rotate the cube in the Y axis 90º clockwise.
 - **z**: Rotate the cube in the Z axis 90º clockwise.
 
 > [!NOTE]
