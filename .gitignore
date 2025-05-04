@@ -3,4 +3,5 @@
 *.out
 *.xcf
 *.o
+*.d
 rubik
